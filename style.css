@@ -1,0 +1,315 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1em;
+}
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.category-row {
+    display: flex;
+    gap: 10px;
+}
+
+#quoteInput {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+#quoteInput:focus {
+    outline: none;
+    border-color: #f5576c;
+}
+
+#categorySelect {
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1em;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    min-width: 150px;
+}
+
+#categorySelect:focus {
+    outline: none;
+    border-color: #f5576c;
+}
+
+#addBtn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+#addBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5);
+}
+
+#addBtn:active {
+    transform: translateY(0);
+}
+
+/* Filter Buttons */
+.filter-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.filter-btn:hover {
+    border-color: #f5576c;
+    color: #f5576c;
+}
+
+.filter-btn.active {
+    background: #f5576c;
+    color: white;
+    border-color: #f5576c;
+}
+
+/* Quote List */
+#quotesList {
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+#quotesList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#quotesList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#quotesList::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.quote-item {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border-left: 4px solid #f5576c;
+    animation: slideIn 0.3s ease;
+}
+
+.quote-item.favorite {
+    border-left-color: #f39c12;
+    background: #fff9e6;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.quote-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.quote-item.favorite:hover {
+    background: #fff3cd;
+}
+
+.quote-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.quote-left {
+    flex: 1;
+}
+
+.quote-text {
+    color: #333;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.quote-edit-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.quote-text::before {
+    content: '"';
+    font-size: 1.5em;
+    color: #667eea;
+    margin-right: 5px;
+}
+
+.quote-text::after {
+    content: '"';
+    font-size: 1.5em;
+    color: #667eea;
+    margin-left: 5px;
+}
+
+/* Buttons in quotes */
+.quote-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.action-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.favorite-btn { background: #f39c12; color: white; }
+.favorite-btn:hover { background: #e67e22; transform: scale(1.05); }
+
+.edit-btn { background: #3498db; color: white; }
+.edit-btn:hover { background: #2980b9; transform: scale(1.05); }
+
+.save-btn { background: #27ae60; color: white; }
+.save-btn:hover { background: #229954; }
+
+.cancel-btn { background: #95a5a6; color: white; }
+.cancel-btn:hover { background: #7f8c8d; }
+
+.delete-btn { background: #e74c3c; color: white; }
+.delete-btn:hover { background: #c0392b; transform: scale(1.05); }
+
+/* Empty State */
+.empty-state { text-align: center; padding: 60px 20px; color: #999; }
+.empty-state-icon { font-size: 4em; margin-bottom: 20px; }
+.empty-state-text { font-size: 1.2em; }
+
+/* Clear all button */
+.clear-all-btn {
+    width: 100%;
+    padding: 15px;
+    background: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-all-btn:hover {
+    background: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+.clear-all-btn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Status Message */
+.status-message {
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.status-message.show { opacity: 1; }
+.status-message.success { background: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
+.status-message.error { background: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; }

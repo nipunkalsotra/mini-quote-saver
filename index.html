@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Quote Saver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💭 Mini Quote Saver</h1>
+        <p class="subtitle">Save your favorite quotes forever!</p>
+
+        <div class="status-message" id="statusMessage"></div>
+
+        <div class="input-section">
+            <div class="input-row">
+                <input 
+                    type="text" 
+                    id="quoteInput" 
+                    placeholder="Enter a quote..."
+                    maxlength="200"
+                >
+                <button id="addBtn">➕ Add Quote</button>
+            </div>
+            <div class="category-row">
+                <select id="categorySelect">
+                    <option value="inspirational">✨ Inspirational</option>
+                    <option value="funny">😂 Funny</option>
+                    <option value="motivational">💪 Motivational</option>
+                    <option value="life">🌱 Life</option>
+                    <option value="other">📝 Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All Quotes</button>
+            <button class="filter-btn" data-filter="favorites">⭐ Favorites</button>
+            <button class="filter-btn" data-filter="inspirational">✨ Inspirational</button>
+            <button class="filter-btn" data-filter="funny">😂 Funny</button>
+            <button class="filter-btn" data-filter="motivational">💪 Motivational</button>
+            <button class="filter-btn" data-filter="life">🌱 Life</button>
+            <button class="filter-btn" data-filter="other">📝 Other</button>
+        </div>
+
+        <div class="quotes-header">
+            <h2>My Quotes</h2>
+            <div class="header-stats">
+                <span class="quote-count" id="quoteCount">0 quotes</span>
+                <span class="word-count" id="wordCount">0 words</span>
+            </div>
+        </div>
+
+        <ul id="quotesList">
+            <!-- Quotes will be rendered here -->
+        </ul>
+
+        <button class="clear-all-btn" id="clearAllBtn">🗑️ Clear All Quotes</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
